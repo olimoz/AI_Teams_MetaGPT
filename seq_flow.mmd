@@ -1,0 +1,15 @@
+
+    sequenceDiagram
+        participant M as Main
+        participant DA as DataAnalyzer
+        participant P as Plotter
+        participant FO as FileOperator
+        M->>DA: __init__(data_path)
+        M->>DA: analyze_and_cluster_data(n_clusters)
+        M->>DA: create_summary()
+        M->>P: __init__(data)
+        M->>P: create_treemap()
+        M->>P: print_treemap(file_path)
+        M->>FO: __init__(data)
+        M->>FO: save_data_to_excel(file_path)
+    

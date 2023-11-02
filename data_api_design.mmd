@@ -1,0 +1,22 @@
+
+    classDiagram
+        class DataAnalyzer{
+            +pandas.DataFrame data
+            +dict summary
+            +__init__(data_path: str)
+            +analyze_and_cluster_data(n_clusters: int)
+            +create_summary()
+        }
+        class Plotter{
+            +plotly.graph_objects.Figure treemap
+            +__init__(data: pandas.DataFrame)
+            +create_treemap()
+            +print_treemap(file_path: str)
+        }
+        class FileOperator{
+            +__init__(data: pandas.DataFrame)
+            +save_data_to_excel(file_path: str)
+        }
+        DataAnalyzer "1" -- "1" Plotter: uses
+        DataAnalyzer "1" -- "1" FileOperator: uses
+    
